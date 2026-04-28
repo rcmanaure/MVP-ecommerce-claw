@@ -1,35 +1,14 @@
-# Dependencies
 node_modules/
-
-# Environment
 .env
-.env.local
-.env.*.local
-
-# Build output
+.env.*
 dist/
-
-# Logs
+build/
 logs/
 *.log
-
-# Prisma
-.prisma/
-
-# Coverage
 coverage/
-
-# Data (persisted on Storage3, not in git)
-data/
-
-# IDE
+.DS_Store
 .vscode/
 .idea/
 *.swp
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Docker
-docker/.env
+*.swo
+data/
