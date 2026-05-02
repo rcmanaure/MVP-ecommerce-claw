@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/products');
 
 const app = express();
@@ -26,6 +27,11 @@ app.get('/health', (req, res) => {
 // Mount API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ error: { code: 'NOT_FOUND', message: 'Route not found.' } });
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
